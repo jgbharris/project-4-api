@@ -5,5 +5,6 @@ end
 User.create!([
   { username: "mickyginger", firstname: "Mike", lastname: "Hayden" },
   { username: "eisacke", firstname: "Emily", lastname: "Isacke" },
-  { username: "markyjangles", firstname: "Marc", lastname: "De Vois" }
+  { username: "markyjangles", firstname: "Marc", lastname: "De Vois" },
+  { username: "jimbo", firstname: "James", lastname: "Harris" }
 ])

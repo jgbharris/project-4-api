@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticker: MyString
+  name: MyString
+  price_open: 1.5
+  price_close: 1.5
+  sector: MyString
+  52_high: 1.5
+  52_low: 1.5
+  price_to_earnings: 1.5
+  price_to_book: 1.5
+  price_to_sales: 1.5
+  market_cap: 1.5
+
+two:
+  ticker: MyString
+  name: MyString
+  price_open: 1.5
+  price_close: 1.5
+  sector: MyString
+  52_high: 1.5
+  52_low: 1.5
+  price_to_earnings: 1.5
+  price_to_book: 1.5
+  price_to_sales: 1.5
+  market_cap: 1.5
