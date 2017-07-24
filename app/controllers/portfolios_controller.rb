@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_user!
 
   # GET /portfolios
   def index
@@ -16,6 +17,7 @@ class PortfoliosController < ApplicationController
   # POST /portfolios
   def create
     @portfolio = Portfolio.new(portfolio_params)
+    @portfolio.user = current_user
 
     if @portfolio.save
       render json: @portfolio, status: :created, location: @portfolio
@@ -46,6 +48,6 @@ class PortfoliosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def portfolio_params
-      params.require(:portfolio).permit(:name, stock_ids: [], user_ids: [])
+      params.permit(:name, stock_ids: [], user_ids: [])
     end
 end

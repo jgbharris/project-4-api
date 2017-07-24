@@ -1,5 +1,6 @@
 class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_user!
 
   # GET /stocks
   def index
