@@ -11,7 +11,7 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios/1
   def show
-    render json: @portfolio, include: ['portfolio.comments', 'portfolio.comments.user']
+    render json: @portfolio, include: ['comments.user']
   end
 
   # POST /portfolios

@@ -47,6 +47,6 @@ class StocksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def stock_params
-      params.require(:stock).permit(:ticker, :name, :price_open, :price_close, :sector, :fifty_two_week_high, :fifty_two_week_low, :price_to_earnings, :price_to_book, :price_to_sales, :market_cap, portfolio_ids: [])
+      params.permit(:ticker, :name, :price_open, :price_close, :sector, :fifty_two_week_high, :fifty_two_week_low, :price_to_earnings, :price_to_book, :price_to_sales, :market_cap, portfolio_ids: [])
     end
 end
