@@ -11,7 +11,7 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios/1
   def show
-    render json: @portfolio
+    render json: @portfolio, include: ['portfolio.comments', 'portfolio.comments.user']
   end
 
   # POST /portfolios
@@ -37,6 +37,7 @@ class PortfoliosController < ApplicationController
 
   # DELETE /portfolios/1
   def destroy
+    return render json: { errors: ["Unauthorized"] } if @portfolio.user != current_user
     @portfolio.destroy
   end
 

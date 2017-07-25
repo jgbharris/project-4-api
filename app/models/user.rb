@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password validations: false
   has_many :portfolios
+  has_many :comments
   has_many :stocks, through: :portfolios
   validates :username, presence: true
   validates :email, uniqueness: true, presence: true

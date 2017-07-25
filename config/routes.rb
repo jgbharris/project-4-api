@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
 
+
   scope :api do
+    resources :comments
     resources :users
     resources :stocks
     resources :portfolios
