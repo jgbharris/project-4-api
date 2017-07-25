@@ -1,11 +1,11 @@
 class IntrinioController < ApplicationController
   skip_before_action :authenticate_user!
 
-  def stock_info
+  def info
 
     username = "#{ENV["INTRINIO_USERNAME"]}"
     password = "#{ENV["INTRINIO_PASSWORD"]}"
-    request_url = "https://api.intrinio.com/companies?ticker=AAPL"
+    request_url = "https://api.intrinio.com/companies?ticker=#{params[:ticker]}"
     auth = { :username => username, :password => password }
 
 
@@ -18,11 +18,11 @@ class IntrinioController < ApplicationController
 
   end
 
-  def stock_price
+  def price
 
     username = "#{ENV["INTRINIO_USERNAME"]}"
     password = "#{ENV["INTRINIO_PASSWORD"]}"
-    request_url = "https://api.intrinio.com/prices?identifier=AAPL"
+    request_url = "https://api.intrinio.com/prices?identifier=#{params[:ticker]}"
     auth = { :username => username, :password => password }
 
     response = HTTParty.get(request_url, {
