@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :image, ImageUploader
   has_secure_password validations: false
   has_many :portfolios
   has_many :comments

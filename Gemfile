@@ -44,3 +44,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Other
 gem 'httparty'
+gem 'carrierwave'
+gem 'carrierwave-base64'
+gem 'fog-aws'
