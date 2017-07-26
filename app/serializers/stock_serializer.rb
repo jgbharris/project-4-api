@@ -1,6 +1,5 @@
 class StockSerializer < ActiveModel::Serializer
-  has_many :portfolios
-  has_many :users, through: :portfolios
-  attributes :id, :ticker, :name, :price_open, :price_close, :sector, :fifty_two_week_high, :fifty_two_week_low, :price_to_earnings, :price_to_book, :price_to_sales, :market_cap,
-  :portfolio_ids
+  belongs_to :portfolio
+  # has_many :users, through: :portfolios
+  attributes :id, :ticker, :name, :sector, :shares
 end

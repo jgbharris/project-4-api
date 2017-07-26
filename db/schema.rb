@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725162240) do
+ActiveRecord::Schema.define(version: 20170726081602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,26 +33,15 @@ ActiveRecord::Schema.define(version: 20170725162240) do
     t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 
-  create_table "portfolios_stocks", id: false, force: :cascade do |t|
-    t.bigint "portfolio_id", null: false
-    t.bigint "stock_id", null: false
-  end
-
   create_table "stocks", force: :cascade do |t|
     t.string "ticker"
     t.string "name"
-    t.float "price_open"
-    t.float "price_close"
     t.string "sector"
-    t.float "fifty_two_week_high"
-    t.float "fifty_two_week_low"
-    t.float "price_to_earnings"
-    t.float "price_to_book"
-    t.float "price_to_sales"
-    t.float "market_cap"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "shares"
+    t.bigint "portfolio_id"
+    t.index ["portfolio_id"], name: "index_stocks_on_portfolio_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,4 +58,5 @@ ActiveRecord::Schema.define(version: 20170725162240) do
   add_foreign_key "comments", "portfolios"
   add_foreign_key "comments", "users"
   add_foreign_key "portfolios", "users"
+  add_foreign_key "stocks", "portfolios"
 end
