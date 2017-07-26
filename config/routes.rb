@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     get '/info', to: 'intrinio#info'
     get '/price', to: 'intrinio#price'
     get'/news', to: 'news#news'
-
-
+    get '/companies', to: 'intrinio#companies'
   end
 end
