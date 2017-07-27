@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_secure_password validations: false
-  has_many :portfolios
-  has_many :comments
+  has_many :portfolios, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :stocks, through: :portfolios
   validates :username, presence: true
   validates :email, uniqueness: true, presence: true

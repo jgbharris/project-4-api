@@ -37,7 +37,7 @@ class PortfoliosController < ApplicationController
 
   # DELETE /portfolios/1
   def destroy
-    return render json: { errors: ["Unauthorized"] } if @portfolio.user != current_user
+    # return render json: { errors: ["Unauthorized"] } if @portfolio.user != current_user
     @portfolio.destroy
   end
 
