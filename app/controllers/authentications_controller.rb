@@ -3,6 +3,7 @@ class AuthenticationsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def register
+    p user_params
     user = User.new(Uploader.upload(user_params))
     if user.save
       render json: user, status: :ok
