@@ -1,24 +1,36 @@
-# README
+# Project 4 - Corporate Radar
+JimBo Harris
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Installation and setup
 
-* Ruby version
+* `yarn` to install dependencies.
+* `gulp` to compile the source code and open in browser
 
-* System dependencies
 
-* Configuration
+## Description
 
-* Database creation
+The site is designed to let users search for stocks and add them to a fantasy portfolio. Users can also look through other portfolios on the site and post comments on strategy etc.
 
-* Database initialization
+The site used Intrino API for the financial data and News API for newsflow.
 
-* How to run the test suite
+## Technologies used
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby on Rails
+* Postgres SQL
+* HTML 5
+* Angular JS
+* JavaScript ES6
+* SCSS
+* jQuery 3.10
+* gulp
+* yarn
+* Git & github
+* Facebook oauth
+* Intrinio (Financial API)
+* News API (News API)
+* Amazon web services
 
-* Deployment instructions
+## Hurdles
 
-* ...
+Finding an API which gives up to date financial data for free caused a bit of difficulty.
